@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block css %}<style>{% include "css/base.css" %}{% include "css/page-article.css" %}{% include "css/responsive.css" %}</style>{% endblock %}
+
+{% block content %}
+<div class="row">
+ <div class="c8">
+  {% for page in pages|sort(attribute='sortorder') %}
+   {{ page.content }}
+  {% endfor %}
+ </div>
+</div>
+{% endblock %}

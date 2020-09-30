@@ -1,0 +1,14 @@
+{% if article.author == "Kevin Whinnery" %}
+{% include "sponsor/twilioquest.html" %}
+{% endif %}
+{% include "sponsor/carbon.html" %}
+<div class="pn">
+ <div class="pnh">
+  <h3><a href="/table-of-contents.html">More Resources</a></h3>
+ </div>
+ <img src="{{ article.headerimage }}" alt="{{ article.headeralt }}" width="100%"> 
+ <div class="lg">
+  {% include "blog/" + article.slug + ".html" %}
+  <a href="/table-of-contents.html" class="lgi">...or view all topics.</a>
+ </div>
+</div>

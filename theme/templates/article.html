@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block meta_header %}{% if article and article.meta %}
+<meta name="description" content="{{ article.meta }}">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ article.title }}" />
+<meta name="twitter:image" content="https://www.fullstackpython.com{{ article.headerimage }}" />
+<meta name="twitter:site" content="@fullstackpython" />
+<meta name="twitter:creator" content="@mattmakai" />
+<meta property="og:url" content="{{ SITEURL }}/blog/{{ article.slug }}.html" />
+<meta property="og:title" content="{{ article.title }}" />
+<meta property="og:description" content="{{ article.meta }} Great post on fullstackpython.com!" />
+<meta property="og:image" content="{{ SITEURL }}{{ article.headerimage }}" />
+<link rel="canonical" href="https://www.fullstackpython.com/blog/{{ article.slug }}.html" />
+{% endif %}{% endblock %}
+
+{% block title %}{% if article %}{{ article.title }} - {% endif %}{% endblock %}
+
+{% block css %}<style>{% include "css/base.css" %}{% include "css/panel.css" %}{% include "css/page-article.css" %}{% include "css/carbon.css" %}{% include "css/responsive.css" %}</style>{% if article and article.slug == "maps-django-web-applications-projects-mapbox" %} 
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+{% endif %}{% endblock %}
+
+{% block content %}
+{% if article %}
+<div class="row">
+ <div class="c12">
+  <h1 style="font-size: 36px;">{{ article.title }}</h1>
+  <div style="font-size:12px;color:#666;margin:0 0 10px">
+   {% if article.modified != article.date %}
+     Post updated by 
+     {% if article.author == "Matt Makai" %}<a href="/about-author.html">Matt Makai</a>{% else %}<a href="{{ article.authorlink }}">{{ article.author }}</a>{% endif %}
+     on {{ article.modified.strftime('%B %d, %Y') }}. Originally posted
+     on {{ article.date.strftime('%B %d, %Y') }}.
+   {% else %} 
+     Posted by
+     {% if article.author == "Matt Makai" %}<a href="/about-author.html">Matt Makai</a>{% else %}<a href="{{ article.authorlink }}">{{ article.author }}</a>{% endif %}
+     on {{ article.date.strftime('%B %d, %Y') }}.
+   {% endif %}
+  </div>
+ </div>
+</div>
+<div class="row">
+ {% if article.category == "talk" %}
+  <div class="c12">
+ {% else %}
+  <div class="c9">
+ {% endif %}
+   {{ article.content }}
+   {% endif %}
+  </div>
+ {% if article.category == "talk" %}
+ {% else %}
+  <div class="c3">
+   {% include "article-sidebar.html" %}
+  </div>
+ {% endif %}
+</div>
+{% endblock %}

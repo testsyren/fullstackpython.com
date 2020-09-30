@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block meta_header %}
+<meta name="description" content="Full Stack Python is an open book on Python web development, deployments and DevOps.">
+{% endblock %}
+
+{% block title %}Table of Contents for {% endblock %}
+
+{% block css %}<style>{% include "css/base.css" %}{% include "css/toc.css" %}{% include "css/responsive.css" %}</style>{% endblock %}
+
+{% block banner %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="c12">
+<h1>Table of Contents</h1>
+  <div class="row">
+   <div class="c4 toc">
+    <h3>1. <a href="https://www.fullstackpython.com/">Introduction</a></h3>
+{% include "book-chapters.html" %}
+<br>
+
+<div class="row">
+<div class="c9">
+<h2><a href="/blog.html">Blog Post Tutorials</a></h2>
+{% for a in articles %}<h4 class="bp"><a href="/blog/{{ a.slug }}.html">{{ a.title }}</a></h4>{% endfor %}
+</div>
+<div class="c3">
+<h2><a href="https://www.deploypython.com/">Books &amp; Videos</a></h2>
+<div class="sns desc">Each of these videos and books was recorded or written by me, <a href="/about-author.html">Matt Makai</a>.</div>
+<h4 class="bp"><a href="https://training.talkpython.fm/courses/explore_ansible/introduction-to-ansible-with-python">Introduction to Ansible</a></h4>
+<h4 class="bp"><a href="https://training.talkpython.fm/courses/explore_entrepreneurs/python-for-entrepreneurs-build-and-launch-your-online-business">Python for Entrepreneurs</a></h4>
+<h4 class="bp"><a href="https://www.deploypython.com/full-stack-python.html">Full Stack Python Supporter's Edition</a></h4>
+<h4 class="bp"><a href="https://www.deploypython.com/deploying-flask-web-apps.html">Deploying Flask Web Apps</a></h4>
+<hr>
+<div class="sns desc">These books and courses were created by fellow 
+Python developers. I have used each one myself and recommend 
+them all if you are looking to buy high quality resources.</div>
+<h4 class="bp"><a href="https://testdriven.io/courses/real-time-app-with-django-channels-and-angular/?utm_source=fsp">Developing a Real-Time Taxi App with Django Channels and Angular</a> by <a href="https://testdriven.io/authors/herman/">Michael Herman</a></h4>
+<h4 class="bp"><a href="https://testdriven.io/courses/tdd-flask/?utm_source=fsp">Test-Driven Development with Python, Flask, and Docker</a> by <a href="https://testdriven.io/authors/herman/">Michael Herman</a></h4>
+<h4 class="bp"><a href="https://testdriven.io/courses/aws-flask-react/?utm_source=fsp">Deploying a Flask and React Microservice to AWS ECS</a> by <a href="https://testdriven.io/authors/herman/">Michael Herman</a></h4>
+</div>
+</div>
+
+<h2>Example Python Projects and Code</h2>
+{% include "code-examples/django.html" %}
+{% include "code-examples/flask.html" %}
+{% include "code-examples/sqlalchemy.html" %}
+
+{% endblock %}
+
+{% block lower_banner %}
+{% endblock %}

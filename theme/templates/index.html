@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block meta_header %}
+<meta name="description" content="Full Stack Python explains programming concepts in plain language and provides links to the best tutorials for those topics.">
+<link rel="canonical" href="https://www.fullstackpython.com/" />
+{% endblock %}
+
+{% block css %}<style>{% include "css/base.css" %}{% include "css/toc.css" %}{% include "css/panel.css" %}{% include "css/page-article.css" %}{% include "css/carbon.css" %}{% include "css/responsive.css" %}</style>{% endblock %}
+
+{% block banner %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+ <div class="c8">
+  <h1 style="font-size:26px">Build, Deploy and Operate Python Applications</h1>
+  <p>You're knee deep in learning <a href="http://www.python.org/">Python</a>
+  programming. The syntax is starting to make sense. The first
+  few <em>ahh-ha!</em> moments hit you as you learn to use 
+  conditional statements, <code>for</code> loops and classes while 
+  coding with the open source libraries that make Python such an 
+  <a href="/table-of-contents.html">amazing programming ecosystem</a>.</p>
+  <p>Now you want to take your
+  <a href="/learning-programming.html">initial Python knowledge</a>
+  and make something real, like a 
+  <a href="/web-development.html">web application</a> to show off to 
+  friends or sell as a service to customers. That's where 
+  <a href="https://www.fullstackpython.com/table-of-contents.html">Full Stack Python</a> 
+  comes in. You have come to the right place to learn everything you
+  need to <a href="/web-development.html">create</a>, 
+  <a href="/deployment.html">deploy</a> and <a href="/devops.html">operate</a> 
+  Python-powered applications.</p>
+  <p><a href="/">Full Stack Python</a> is an 
+  <a href="https://github.com/mattmakai/fullstackpython.com">open source book</a> 
+  that explains technical concepts in plain language.
+  Read everything online for free or purchase the
+  <a href="https://www.deploypython.com/full-stack-python.html">Supporter's Edition</a>
+  for nicely-formatted ebook (PDF, EPUB, MOBI) versions.
+  This guide branches out on topic because your learning
+  requirements depend on what you're working on. Choose a 
+  topic from the links below or view the full
+  <a href="/table-of-contents.html">table of contents</a>
+  to see even more subjects you can learn.
+  </p>
+  <h3>What do you need to learn first?</h3>
+ </div>
+ {% include "index-sidebar.html" %}
+</div>
+<div class="row">
+ <div class="c12">
+  <div class="row">
+   <div class="c4 toc">
+    <h3>1. Introduction</h3>
+{% include "book-chapters.html" %}
+ </div>
+</div>
+{% endblock %}

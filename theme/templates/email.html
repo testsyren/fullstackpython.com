@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Email sign up - {% endblock %}
+
+{% block css %}<style>{% include "css/base.css" %}{% include "css/panel.css" %}{% include "css/page-article.css" %}{% include "css/responsive.css" %}</style>{% endblock %}
+
+{% block content %}
+<div class="row">
+ <div class="c8">
+  <h1>Email Newsletter</h1>
+  {% include "email-for-book.html" %}
+  <h2>Previous issues</h2>
+  <p>Past email issues are posted on the 
+     <a href="/blog.html">Full Stack Python blog</a> and are also listed here:
+  </p>
+  <ul style="font:14px Courier;line-height:1.4em">
+   {% for a in articles %}
+    {% if a.newsletter == "True" %}
+     <li>{{ a.date.strftime('%m/%d/%Y') }} <a href="/blog/{{ a.slug }}.html">{{ a.title }}</a></li>
+    {% endif %}
+   {% endfor %}
+  </ul>
+ </div>
+ <div class="co1 c3" id="sb">
+  {% include "sidebar.html" %}
+ </div>
+</div>
+{% endblock %}
