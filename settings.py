@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
-
+#sdss -*- coding: utf-8 -*-
+#comment comment
 AUTHOR = u'Matt Makai'
 SITENAME = u'Full Stack Python'
 SITEURL = 'https://www.fullstackpython.com'
