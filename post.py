@@ -1,5 +1,6 @@
 import argparse
 #this is comment on post
+#this is second comment on post
 
 """Automates posting to social channels and tutorials page on
 fullstackpython.com.
