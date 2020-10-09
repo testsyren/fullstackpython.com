@@ -1,7 +1,8 @@
 import boto3
 import filecmp
 import os
-#update py comment
+#update py commen
+#test update commemntt
 
 UPDATED_SITE_DIR = os.environ.get('UPDATED_SITE_DIR')
 CURRENT_SITE_DIR = os.environ.get('CURRENT_SITE_DIR')
