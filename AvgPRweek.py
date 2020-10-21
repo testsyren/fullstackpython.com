@@ -1,11 +1,12 @@
 from pprint import pprint
 from github import Github
-import datetime,time,calendar
+import config,datetime,time,calendar
 
 # token=config.git_token
 
+token=config.git_token
+g=Github(token)
 
-g=Github('1e303c2fb9056453aecd6ff128957eb5e928eaf6')
 
 cal = calendar.Calendar()
 
@@ -24,7 +25,7 @@ def avgtime():
     clo1=[]
     cre1=[]
     crm1=[]
-    repo=g.get_repo("testsyren/fullstackpython.com")
+    repo=g.get_repo(config.repos1)
     pulls=repo.get_pulls(state='closed',sort='created',base='master')
     for pr in pulls:
         cre=pr.created_at
