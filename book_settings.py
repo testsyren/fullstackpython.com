@@ -32,3 +32,5 @@ SOCIAL = (
 PROJECTS = ()
 
 JINJA_EXTENSIONS = (['jinja2.ext.autoescape',])
+
+#Making Changes to reflect
